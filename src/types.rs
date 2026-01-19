@@ -45,7 +45,19 @@ pub union imm_data_invalidated_rkey_union_t {
     pub invalidated_rkey: u32,
 }
 
+impl std::fmt::Debug for imm_data_invalidated_rkey_union_t {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        unsafe {
+            f.debug_struct("imm_data_invalidated_rkey_union_t")
+                .field("imm_data", &self.imm_data)
+                .field("invalidated_rkey", &self.invalidated_rkey)
+                .finish()
+        }
+    }
+}
+
 #[repr(C)]
+#[derive(Debug)]
 pub struct ibv_wc {
     pub wr_id: u64,
     pub status: ibv_wc_status::Type,
