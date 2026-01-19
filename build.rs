@@ -142,7 +142,7 @@ fn main() {
         // for example: `pub eth: ibv_flow_spec_eth`
         // note: see issue #55149 <https://github.com/rust-lang/rust/issues/55149> for more information
         .derive_copy(true)
-        .derive_debug(false)
+        .derive_debug(true)
         .derive_default(false)
         .generate_comments(false)
         //.generate_inline_functions(true)
